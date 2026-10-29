@@ -1,0 +1,262 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #1e1e1e;
+    --text-color: #161616;
+    --text2-color: #ffffff;
+    --modal-delay: .5s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: var(--primary-color);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.07);
+    color: var(--text-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    z-index: 100;
+    transform: translateX(-100%);
+}
+nav  .logo {
+    padding: 30px 0;
+    text-align: center;
+}
+
+nav .logo img {
+    width: 75px;
+    height: 75px;
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+nav ul li {
+    border-bottom: 2px solid rgba(200, 200, 200, 0.1);
+    padding: 20px;
+}
+
+nav ul li a{
+    display: flex;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: .2s;
+    font-size: 18px;
+}
+
+nav ul li i {
+    display: flex;
+    width: 24px;
+
+}
+
+nav ul li a i:hover {
+    animation: mn .5s ease infinite;
+}
+
+@keyframes mn {
+    0% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+header {
+    background-color: var(--secondary-color);
+    color: var(--text2-color);
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+    padding: 40px 15px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 30px;
+}
+
+button, input[type="submit"] {
+    background-color: var(--primary-color);
+    border: 0;
+    border-radius: 8px;
+    color: var(--text-color);
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: medium;
+}
+
+.toggle {
+    background:rgba(225, 225, 225, 0.905);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+}
+
+.toggle i {
+    font-size: 30px;
+}
+
+.create-account {
+    padding: 12px 30px;
+}
+
+.container {
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 800px;
+}
+
+body.show-nav {
+    transform: translateX(200px);
+}
+body.hide-nav {
+    transform: translateX(0px);
+}
+
+body {
+    transition: transform .3s ease;
+}
+
+.modal-container {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 100%;
+    width: 400px;
+}
+
+.modal-container.show-modal {
+    display: block;
+}
+
+.modal {
+    animation:modalOpen;
+    animation-duration: var(--modal-delay);
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    z-index: 10;
+    top: 20%;
+    background: none;
+    font-size: 40px;
+}
+.img-con {
+    width: 100%; /* Set the desired width */
+    height: 280px; /* Set the height to show only part of the image */
+    overflow: hidden;
+}
+.img-con .my-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: bottom;
+    filter: brightness(40%);
+    z-index: 20;
+}
+
+.modal-header h3 {
+    position: absolute;
+    top: 60px;
+    right: 120px;
+    color: #fff;
+    z-index: 10;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal-form div {
+    margin: 15px 0;
+}
+
+.modal-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal form .form-input {
+    padding: 8px;
+    width: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.815);
+    padding: 15px;
+    border-radius: 50%;
+    margin: 10px;
+    transition: .5s;
+}
+
+.close-btn:hover {
+    transform: scale(1.08);
+}
+
+.submit-btn {
+    width: 90px;
+    background: var(--secondary-color);
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 1rem;
+    transition: .2s;
+}
+
+.submit-btn:hover {
+    border: 1px solid var(--secondary-color);
+    background-color: #fff;
+    color: var(--text-color);
+}
+
